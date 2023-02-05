@@ -1,0 +1,31 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "m2",
+    "scopeName": "source.m2",
+    "patterns": [
+        {
+            "include": "#line_start_S"
+        },
+        {
+            "include": "#line_start_A"
+        }
+    ],
+    "repository": {
+        "line_start_S": {
+            "patterns": [
+                {
+                    "match": "^S.*$",
+                    "name": "markup.heading"
+                }
+            ]
+        },
+        "line_start_A": {
+            "patterns": [
+                {
+                    "match": "^A.*$",
+                    "name": "markup.list"
+                }
+            ]
+        }
+    }
+}

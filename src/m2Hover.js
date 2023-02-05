@@ -5,7 +5,7 @@ function provideHover(document, position, token) {
   const wordRange = document.getWordRangeAtPosition(position);
   const word = document.getText(wordRange);
   const line = document.lineAt(position.line).text;
-
+	vscode.window.showInformationMessage(word);
   // Check if the word is a corrected text inside an edit
   if (utils.isCorrectedText(line, word)) {
     // Parse the edit annotation and get the original sentence

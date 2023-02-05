@@ -1,16 +1,22 @@
 {
   "name": "vscode-m2-format-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A VSCode plugin for more convenient work with M2 format in the editor.",
-  "main": "./out/extension.js",
+  "main": "./src/extension.js",
+  "other":{
+    "main": "./extension/out/extension.js"
+  },
   "scripts": {
+    "build": "webpack --mode production",
     "test": "jest"
   },
   "devDependencies": {
-    "@types/vscode": "1.75.0",
+    "@types/vscode": "^1.5.0",
     "jest": "^26.6.0",
     "typescript": "^4.9.5",
-    "vscode": "latest"
+    "vscode": "^1.1.37",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   },
   "keywords": [
     "VSCode",
@@ -18,13 +24,29 @@
     "Editor"
   ],
   "activationEvents": [
-    "onLanguage:m2"
+    "onFile:*.m2",
+    "onCommand:test-ext.helloWorld"
   ],
   "engines": {
-    "vscode": "2.15.0"
+    "vscode": "^1.5.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/BogdanDidenko/vscode-m2-format-helper"
-  }
+  },
+  "contributes": {
+    "languages": [
+        {
+            "id": "m2",
+            "extensions": [".m2"],
+            "aliases": ["M2"],
+            "configuration": "./syntaxes/m2.tmLanguage.json"
+        }
+    ],
+    "commands": [{
+      "command": "test-ext.helloWorld",
+      "title": "Hello World"
+    }]
+  },
+  "publisher": "BohdanDidenko"
 }
