@@ -1,0 +1,30 @@
+{
+  "name": "vscode-m2-format-plugin",
+  "version": "0.0.1",
+  "description": "A VSCode plugin for more convenient work with M2 format in the editor.",
+  "main": "./out/extension.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/vscode": "1.75.0",
+    "jest": "^26.6.0",
+    "typescript": "^4.9.5",
+    "vscode": "latest"
+  },
+  "keywords": [
+    "VSCode",
+    "M2 format",
+    "Editor"
+  ],
+  "activationEvents": [
+    "onLanguage:m2"
+  ],
+  "engines": {
+    "vscode": "2.15.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BogdanDidenko/vscode-m2-format-helper"
+  }
+}
